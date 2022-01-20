@@ -1,0 +1,11 @@
+.news-line {
+    position: relative;
+    padding: 10px 0;
+    p {
+        margin: 0;
+    }
+
+    .date{
+        color: rgba($color: #aaa, $alpha: 1)
+    }
+}

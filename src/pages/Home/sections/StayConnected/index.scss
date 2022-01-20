@@ -1,0 +1,19 @@
+@import "/src/assets/scss/variables";
+
+.stay-connected {
+    .content-w {
+        transform: translateX(0);
+        // overflow: hidden;
+        h2 {
+            font-size: 3.8rem;
+        }
+    }
+
+    @media (min-width: 1160px) {
+        .content-w {
+            transform: translateX(100px);
+            padding-left: 50px;
+            border-left: 2px solid $blue;
+        }
+    }
+}

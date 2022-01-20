@@ -1,0 +1,100 @@
+@import "/src/assets/scss/variables";
+
+.hero-slides {
+    height: 600px;
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    .keen-slider {
+        height: 100%;
+        &__slide {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .slider-wrapper {
+        position: relative;
+    }
+
+    .slider-side-control {
+        position: absolute;
+        width: 150px;
+        right: -80px;
+        bottom: 0;
+
+        .thumbnails {
+            position: relative;
+            height: 400px;
+
+            .active {
+                &::before {
+                    content: "";
+                    pointer-events: none;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    background-color: rgba($color: $blue, $alpha: 0.7);
+                }
+            }
+        }
+
+        .dataBar {
+            position: absolute;
+            // padding: 10px 0;
+            bottom: 0;
+            right: -50px;
+            .currentSlide {
+                writing-mode: vertical-lr;
+                text-orientation: sideways-right;
+                transform: rotate(180deg);
+                span {
+                    font-size: 1.5rem;
+                }
+            }
+            .dots {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+                height: 100px;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    // border-right: 2px solid rgba($color: #fff, $alpha: 0.5);
+                    background: rgb($color: #fff, $alpha: 0.5);
+                    width: 2px;
+                    position: absolute;
+                    height: 100px;
+                    top: 0px;
+                }
+            }
+
+            .dot {
+                border: none;
+                width: 10px;
+                height: 10px;
+                background: none;
+                border-radius: 50%;
+                margin: 0 5px;
+                padding: 5px;
+                cursor: pointer;
+            }
+
+            .dot:focus {
+                outline: none;
+            }
+
+            .dot.active {
+                background: #fff;
+            }
+        }
+    }
+}

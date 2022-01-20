@@ -1,0 +1,9 @@
+.project-wrapper {
+    padding: 20px 0 20px 55px;
+    width: 100%;
+    flex-wrap: wrap;
+    [class*="col-"] {
+        min-width: 223px;
+        padding: 0;
+    }
+}

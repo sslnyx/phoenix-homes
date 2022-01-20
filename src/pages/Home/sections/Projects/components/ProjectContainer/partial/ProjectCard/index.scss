@@ -1,0 +1,60 @@
+@import "/src/assets/scss/variables";
+
+.project-card {
+    background: #ccc;
+    padding: 10px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+
+    .back-drop {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: $blue, $alpha: 0.5);
+        top: 0;
+        left: 0;
+        transition: height 0.2s ease;
+    }
+
+    &:hover {
+        .back-drop {
+            height: 45px;
+        }
+    }
+    .project-bg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    .project-content {
+        position: relative;
+        color: #fff;
+        .project-title {
+            font-size: 12px;
+            font-weight: bold;
+            span {
+                font-size: 1.2rem;
+                margin-right: 5px;
+            }
+        }
+    }
+    .project-status{
+        &::after{
+            content: "";
+            display: block;
+            height: 1px;
+            width: 150px;
+            background: #fff;
+        }
+    }
+}

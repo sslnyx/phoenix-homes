@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+main {
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+section {
+    padding: 50px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 14px;
+}
+
+ul {
+    // list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.hr-line {
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.arrow {
+    @include arrow($blue);
+}
+
+.arrow-white {
+    @include arrow(#fff);
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.bg-blue {
+    background: $blue;
+    color: #fff;
+}
+
+.btn-submit {
+    border: 1px solid $blue;
+    background-color: #fff;
+    padding: 8px 2rem;
+    &:hover {
+        background-color: $blue;
+        color: #fff;
+    }
+}
+
+.content {
+    @include content(800px);
+    &-w {
+        @include content(992px);
+    }
+    &-w-ex {
+        @include content(1366px);
+    }
+}

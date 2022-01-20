@@ -1,0 +1,26 @@
+.btn-arrow {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    a {
+        color: #fff;
+    }
+
+    .arrow-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::before {
+            content: "";
+            display: block;
+            right: 0;
+            width: 30px;
+            border-bottom: 1px solid #fff;
+            margin-left: 10px;
+        }
+        .arrow-white {
+            position: absolute;
+            right: 0;
+        }
+    }
+}

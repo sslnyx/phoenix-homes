@@ -1,0 +1,18 @@
+.legacy {
+    position: relative;
+    .content {
+        position: relative;
+    }
+
+    .o-legacy {
+        position: absolute;
+        width: 250px;
+        z-index: 0;
+        top: -25px;
+        left: -80px;
+    }
+
+    .text-block {
+        position: relative;
+    }
+}

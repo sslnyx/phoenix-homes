@@ -1,0 +1,24 @@
+@import "/src/assets/scss/variables";
+
+.news {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+    .contact-bg {
+        position: absolute;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .row {
+        position: relative;
+        color: #fff;
+
+        .news-wrapper {
+            padding: 22px;
+            background-color: rgba($color: $blue, $alpha: 0.5);
+        }
+    }
+}

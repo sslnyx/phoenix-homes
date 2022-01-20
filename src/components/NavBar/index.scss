@@ -1,0 +1,29 @@
+@import "/src/assets/scss/variables";
+
+$paddingVal: 16px;
+
+.siteNav {
+    // position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 50px 22px 26px;
+    background-color: $blue;
+
+    .links-wrapper {
+        margin: 0;
+        margin-right: -$paddingVal;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    a {
+        color: #fff;
+        padding: 5px $paddingVal;
+        margin-right: 10px;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
