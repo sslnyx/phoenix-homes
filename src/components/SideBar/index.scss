@@ -1,14 +1,61 @@
+@import "/src/scss/variables";
+
 .sidebar {
     position: fixed;
+    display: none;
     padding: 50px 0;
     z-index: 1000;
     top: 0;
+    width: 188px;
+
     .site-logo {
-        width: 150px;
+        width: 120px;
 
         svg {
+            .fil0,
+            .fil1 {
+                transition: all 0.5s ease;
+            }
             width: 100%;
             height: 100%;
+        }
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+        font-size: 14px;
+        transition: opacity 0.5s ease;
+    }
+
+    ul.hidden {
+        opacity: 0;
+    }
+
+    @media (min-width: 1350px) {
+        display: flex;
+        justify-content: space-between;
+        height: 600px;
+        flex-direction: column;
+        // align-items: ;
+    }
+}
+
+.colorSet-blue {
+    svg {
+        .fil0 {
+            fill: $blue;
+        }
+        .fil1 {
+            fill: $blue;
+        }
+    }
+
+    ul {
+        li {
+            a {
+                color: $blue;
+            }
         }
     }
 }

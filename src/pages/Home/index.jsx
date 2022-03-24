@@ -6,15 +6,15 @@ import ImageBanner from "../../components/ImageBanner";
 import StayConnected from "./sections/StayConnected";
 import "./index.scss";
 
-const Home = () => {
+const Home = ({ setSecLocation }) => {
   return (
     <>
       <HeroSlide />
-      <OurLegacy />
-      <Projects />
-      <HomeOwner />
-      <ImageBanner />
-      <StayConnected />
+      <OurLegacy {...{ setSecLocation }} />
+      <Projects {...{ setSecLocation }} />
+      <HomeOwner {...{ setSecLocation }} />
+      <ImageBanner {...{ setSecLocation }} />
+      <StayConnected {...{ setSecLocation }} />
     </>
   );
 };

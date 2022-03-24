@@ -1,7 +1,7 @@
-import citylife from "/src/assets/images/hero/phoenix-citylife.jpg";
-import hill from "/src/assets/images/hero/phoenix-hill.jpg";
-import craft from "/src/assets/images/hero/phoenix-craft.jpg";
-import industrial from "/src/assets/images/hero/industrial.jpg";
+import citylife from "/assets/images/hero/phoenix-citylife.jpg";
+import hill from "/assets/images/hero/phoenix-hill.jpg";
+import craft from "/assets/images/hero/phoenix-craft.jpg";
+import industrial from "/assets/images/hero/industrial.jpg";
 
 const slides = [
   {

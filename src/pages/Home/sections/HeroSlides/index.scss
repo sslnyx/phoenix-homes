@@ -1,7 +1,7 @@
-@import "/src/assets/scss/variables";
+@import "/src/scss/variables";
 
 .hero-slides {
-    height: 600px;
+    height: 100%;
     padding-bottom: 50px;
     position: relative;
     overflow: hidden;
@@ -9,27 +9,63 @@
         height: 100%;
         &__slide {
             img {
-                height: 100%;
+                height: 250px;
                 width: 100%;
+                max-width: 948px;
                 object-fit: cover;
+            }
+        }
+
+        .slide-content {
+            position: relative;
+            // top: 30px;
+            // left: 30%;
+            padding-top: 1rem;
+            h5 {
+                display: none;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 12px;
+                max-width: 500px;
+                text-shadow: 2px 2px 3px #000;
+            }
+            .btn-arrow {
+                text-shadow: 2px 2px 3px #000;
+                .arrow-wrapper {
+                    .right {
+                        display: none;
+                    }
+                }
             }
         }
     }
 
     .slider-wrapper {
         position: relative;
+
+        .slider-main {
+            margin-bottom: 10px;
+        }
     }
 
     .slider-side-control {
         position: absolute;
-        width: 150px;
-        right: -80px;
-        bottom: 0;
-
+        width: calc(100% - 44px);
+        /* right: 0; */
+        /* bottom: 0; */
+        /* left: 0; */
+        top: 230px;
         .thumbnails {
             position: relative;
-            height: 400px;
-
+            display: none;
+            height: 70px;
+            margin-bottom: 20px;
+            img {
+                height: 100%;
+            }
             .active {
                 &::before {
                     content: "";
@@ -44,36 +80,44 @@
         }
 
         .dataBar {
-            position: absolute;
+            position: relative;
             // padding: 10px 0;
-            bottom: 0;
-            right: -50px;
+            bottom: inherit;
+            right: inherit;
+            display: flex;
+            justify-content: center;
             .currentSlide {
+                display: none;
                 writing-mode: vertical-lr;
                 text-orientation: sideways-right;
                 transform: rotate(180deg);
-                span {
+                span:first-child {
                     font-size: 1.5rem;
+                    font-weight: bold;
+                }
+                span:nth-child(2) {
+                    font-size: 14px;
+                    color: #aaa;
                 }
             }
             .dots {
                 position: relative;
                 display: flex;
-                justify-content: space-between;
-                flex-direction: column;
+                justify-content: flex-end;
+                flex-direction: row;
                 align-items: center;
                 margin-bottom: 20px;
-                height: 100px;
+                height: auto;
 
                 &::before {
                     content: "";
                     display: block;
                     // border-right: 2px solid rgba($color: #fff, $alpha: 0.5);
                     background: rgb($color: #fff, $alpha: 0.5);
-                    width: 2px;
+                    width: 80px;
                     position: absolute;
-                    height: 100px;
-                    top: 0px;
+                    height: 2px;
+                    right: 10px;
                 }
             }
 
@@ -83,7 +127,7 @@
                 height: 10px;
                 background: none;
                 border-radius: 50%;
-                margin: 0 5px;
+                margin: 0 8px;
                 padding: 5px;
                 cursor: pointer;
             }
@@ -94,6 +138,124 @@
 
             .dot.active {
                 background: #fff;
+            }
+        }
+    }
+
+    @media (min-width: 520px) {
+        .keen-slider {
+            &__slide {
+                img {
+                    height: 450px;
+                }
+            }
+        }
+        .slider-side-control {
+            top: 420px;
+        }
+    }
+
+    @media (min-width: 1350px) {
+        .slider-wrapper {
+            position: relative;
+
+            .slider-main {
+                height: 100%;
+            }
+        }
+
+        .keen-slider {
+            height: 100%;
+            &__slide {
+                img {
+                    height: 600px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__slide:nth-child(2) {
+                .slide-content {
+                    right: inherit;
+                    left: 130px;
+                }
+            }
+
+            .slide-content {
+                position: absolute;
+                top: 30px;
+                // left: 30%;
+                transform: translateX(0%);
+                right: 50px;
+                h5 {
+                    display: block;
+                }
+                h3 {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+
+        .slider-side-control {
+            position: absolute;
+            width: 150px;
+            right: -80px;
+            top: inherit;
+            bottom: 0;
+            height: 400px;
+
+            .dataBar {
+                position: absolute;
+                // padding: 10px 0;
+                flex-direction: column;
+                bottom: 0;
+                right: -50px;
+                .dots {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    height: 100px;
+                    &::before {
+                        content: "";
+                        display: block;
+                        // border-right: 2px solid rgba($color: #fff, $alpha: 0.5);
+                        background: rgb($color: #fff, $alpha: 0.5);
+                        width: 2px;
+                        right: inherit;
+                        position: absolute;
+                        height: 100px;
+                        top: 0px;
+                    }
+                }
+
+                .currentSlide {
+                    display: block;
+                }
+            }
+
+            .thumbnails {
+                position: relative;
+                margin: 0;
+                display: block;
+                height: 100%;
+
+                .keen-slider__slide {
+                    height: 100%;
+                }
+
+                .active {
+                    &::before {
+                        content: "";
+                        pointer-events: none;
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        background-color: rgba($color: $blue, $alpha: 0.7);
+                    }
+                }
             }
         }
     }

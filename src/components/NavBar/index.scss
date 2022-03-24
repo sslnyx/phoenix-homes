@@ -1,4 +1,4 @@
-@import "/src/assets/scss/variables";
+@import "/src/scss/variables";
 
 $paddingVal: 16px;
 
@@ -6,7 +6,7 @@ $paddingVal: 16px;
     // position: fixed;
     z-index: 999;
     width: 100%;
-    padding: 50px 22px 26px;
+    padding: 15px 0px;
     background-color: $blue;
 
     .links-wrapper {
@@ -14,16 +14,116 @@ $paddingVal: 16px;
         margin-right: -$paddingVal;
         display: flex;
         justify-content: flex-end;
+        display: none;
+        order: 2;
+    }
+
+    .content-w {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-logo {
+        display: block;
+        svg {
+            width: 60px;
+            height: 100%;
+        }
+    }
+
+    svg {
+        .fil0,
+        .fil1 {
+            transition: all 0.5s ease;
+        }
+    }
+
+    .hamburgerMenu {
+        div {
+            transition: all 0.5s ease;
+        }
     }
 
     a {
         color: #fff;
         padding: 5px $paddingVal;
+        // font-weight: bold;
+        display: inline-block;
         margin-right: 10px;
         text-transform: uppercase;
-        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+        font-family: "Arial Narrow", Helvetica, sans-serif;
+        margin-left: -$paddingVal;
         &:last-child {
             margin-right: 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .links-wrapper {
+            display: block;
+        }
+
+        .hamburgerMenu {
+            display: none;
+        }
+    }
+
+    @media (min-width: 1350px) {
+        padding: 50px 22px 26px;
+        .content-w {
+            justify-content: flex-end;
+        }
+        .site-logo {
+            display: none;
+            order: 1;
+        }
+    }
+}
+
+.sticky {
+    padding-top: 98.19px;
+
+    .siteNav {
+        padding-top: 15px;
+        position: fixed;
+        top: 0;
+        background: none;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        a {
+            color: $blue;
+        }
+    }
+
+    .colorSet-blue {
+        svg {
+            .fil0,
+            .fil1 {
+                fill: $blue;
+            }
+        }
+
+        .hamburgerMenu {
+            div {
+                border-color: $blue;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding-top: 100.67px;
+        .siteNav {
+            padding-top: 26px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-open {
+        .siteNav {
+            padding-right: 39px;
         }
     }
 }

@@ -22,30 +22,11 @@ const newsData = [
     slides: ["york"],
     date: "November 5, 2017",
     content: "news content",
-  },  {
-    title: "YORK - The Tradition of Good Living",
+  },
+  {
+    title: "Sample News for 2nd page",
     slides: ["york"],
-    date: "November 5, 2017",
-    content: "news content",
-  },  {
-    title: "YORK - The Tradition of Good Living",
-    slides: ["york"],
-    date: "November 5, 2017",
-    content: "news content",
-  },  {
-    title: "YORK - The Tradition of Good Living",
-    slides: ["york"],
-    date: "November 5, 2017",
-    content: "news content",
-  },  {
-    title: "YORK - The Tradition of Good Living",
-    slides: ["york"],
-    date: "November 5, 2017",
-    content: "news content",
-  },  {
-    title: "END YORK - The Tradition of Good Living",
-    slides: ["york"],
-    date: "November 5, 2017",
+    date: "November 5, 2012",
     content: "news content",
   },
 ];
@@ -53,12 +34,9 @@ const newsData = [
 newsData.forEach((n) => {
   !n.slidesUrl ? (n.slidesUrl = []) : "";
   n.slides.forEach(async (slide) => {
-    const url = await import(
-      `../../../../../../../../src/assets/images/news/${slide}.jpg`
-    );
-    n.slidesUrl.push(url.default);
+    const url = `/assets/images/news/${slide}.jpg`;
+    n.slidesUrl.push(url);
   });
 });
-
 
 export default newsData;

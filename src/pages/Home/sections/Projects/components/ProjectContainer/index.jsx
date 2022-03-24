@@ -3,9 +3,9 @@ import { Row, Col } from "react-bootstrap";
 import CustomToggle from "./partial/CutomToggle";
 import ProjectCard from "./partial/ProjectCard";
 
-import currentIcon from "/src/assets/images/map/currentProjects_icon_Blue.png";
-import pastIcon from "/src/assets/images/map/PastProjects_icon_Yellow.png";
-import upComingIcon from "/src/assets/images/map/UpcomingProjects_icon_Red.png";
+import currentIcon from "/assets/images/map/CurrentProjects_icon_Blue.png";
+import pastIcon from "/assets/images/map/PastProjects_icon_Yellow.png";
+import upComingIcon from "/assets/images/map/UpcomingProjects_icon_Red.png";
 
 import "./index.scss";
 
@@ -14,6 +14,9 @@ const ProjectContainer = ({
   allProjects,
   setSelectedCat,
   setSelectedProjects,
+  handleShow,
+  getGA,
+  setLoadingGallery,
 }) => {
   const projectByCats = allProjects.reduce((acc, project) => {
     const category = project?.category;
@@ -48,7 +51,17 @@ const ProjectContainer = ({
               <Row className="project-wrapper">
                 {projectByCats[cat].map((project, j) => (
                   <Col key={j} xs={12} md={3}>
-                    <ProjectCard {...project} index={j}></ProjectCard>
+                    <ProjectCard
+                      {...project}
+                      index={j}
+                      {...{
+                        project,
+                        handleShow,
+                        getGA,
+                        cat,
+                        setLoadingGallery,
+                      }}
+                    ></ProjectCard>
                   </Col>
                 ))}
               </Row>

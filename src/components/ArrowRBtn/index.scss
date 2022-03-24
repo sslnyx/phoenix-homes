@@ -1,7 +1,10 @@
+@import "/src/scss/variables";
+
 .btn-arrow {
     color: #fff;
     display: flex;
     align-items: center;
+    cursor: pointer;
     a {
         color: #fff;
     }
@@ -21,6 +24,24 @@
         .arrow-white {
             position: absolute;
             right: 0;
+        }
+    }
+
+    .arrow-down {
+        display: flex;
+        align-items: inherit;
+        justify-content: center;
+        margin-bottom: 1rem;
+        margin-left: 5px;
+        &::before {
+            height: 30px;
+            width: 0;
+            border-right: 1px solid $blue;
+            margin: 0;
+        }
+        .arrow {
+            position: absolute;
+            bottom: 0;
         }
     }
 }

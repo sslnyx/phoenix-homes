@@ -1,5 +1,5 @@
 import React from "react";
-import cityview from "/src/assets/video/cityview.mp4";
+import cityview from "/assets/video/cityview.mp4";
 import "./index.scss";
 
 const ImageBanner = () => {

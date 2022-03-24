@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 300;
+}
+
+main {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+section {
+    padding: 50px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
+}
+
+p {
+    font-size: 14px;
+}
+
+ul {
+    // list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.hr-line {
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.arrow {
+    @include arrow($blue);
+}
+
+.arrow-white {
+    @include arrow(#fff);
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.bg-blue {
+    background: $blue;
+    color: #fff;
+}
+
+.btn-submit {
+    border: 1px solid $blue;
+    background-color: transparent;
+    padding: 8px 2rem;
+    color: $blue;
+    font-weight: normal;
+    &:hover {
+        background-color: $blue;
+        color: #fff;
+    }
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.content {
+    @include content(800px);
+    &-w {
+        @include content(992px);
+    }
+    &-w-ex {
+        @include content(1366px);
+    }
+}
+
+.hamburgerMenu {
+    div {
+        width: 35px;
+        border-bottom: 3px solid #fff;
+        margin: 6px 0;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+}
+.close:hover {
+    opacity: 1;
+}
+.close:before,
+.close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
+
+@media (min-width: 992px) {
+    h2 {
+        font-size: 5rem;
+    }
+}

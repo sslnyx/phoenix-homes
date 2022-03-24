@@ -1,18 +1,45 @@
 .legacy {
     position: relative;
-    .content {
-        position: relative;
-    }
 
-    .o-legacy {
-        position: absolute;
-        width: 250px;
-        z-index: 0;
-        top: -25px;
-        left: -80px;
+    .content-w {
+        .col-12:nth-child(2) {
+            display: flex;
+            align-items: center;
+            img {
+                width: 100%;
+            }
+        }
     }
 
     .text-block {
         position: relative;
+
+        h2,
+        p {
+            position: relative;
+        }
+
+        .o-legacy {
+            position: absolute;
+            width: 250px;
+            z-index: 0;
+            top: -25px;
+            left: -110px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .content-w {
+            transform: translateX(100px);
+            .col-12:nth-child(1) {
+                padding-right: 30px;
+            }
+            .col-12:nth-child(2) {
+                img {
+                    width: 100%;
+                    padding-left: 30px;
+                }
+            }
+        }
     }
 }

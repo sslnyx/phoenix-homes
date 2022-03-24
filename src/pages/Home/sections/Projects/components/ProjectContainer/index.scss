@@ -1,9 +1,17 @@
 .project-wrapper {
-    padding: 20px 0 20px 55px;
+    padding-left: 55px;
+    margin-bottom: 1rem;
     width: 100%;
     flex-wrap: wrap;
     [class*="col-"] {
         min-width: 223px;
         padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 992px) {
+        [class*="col-"] {
+            margin: 0;
+        }
     }
 }

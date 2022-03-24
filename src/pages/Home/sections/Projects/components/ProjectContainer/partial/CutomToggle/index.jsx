@@ -3,7 +3,7 @@ import "./index.scss";
 
 function CustomToggle({ children, eventKey, handleClick, cat }) {
   const decoratedOnClick = useAccordionButton(eventKey, () => {
-    console.log("totally custom!");
+    // console.log("totally custom!");
     handleClick(cat);
   });
 

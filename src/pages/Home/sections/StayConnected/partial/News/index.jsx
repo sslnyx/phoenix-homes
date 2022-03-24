@@ -1,5 +1,5 @@
 import React from "react";
-import NewsBg from "/src/assets/images/contact/contact.jpg";
+import NewsBg from "/assets/images/contact/contact.jpg";
 import { Row, Col } from "react-bootstrap";
 import NewsContainer from "./NewsContainer";
 import "./index.scss";

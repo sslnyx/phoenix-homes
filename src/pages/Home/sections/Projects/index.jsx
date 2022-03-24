@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import GoogleMap from "./components/GoogleMap";
 import ProjectContainer from "./components/ProjectContainer";
-
-import allProjects from "./projectData";
+import GalleryModal from "./components/GalleryModal";
+import getSectionTopBOttom from "../../getSectionTopBottom";
+import { allProjects } from "./projectData";
 
 const render = (status) => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
@@ -11,14 +12,24 @@ const render = (status) => {
   return null;
 };
 
-const Projects = () => {
+const Projects = ({ setSecLocation }) => {
+  const [gshow, setGshow] = useState(false);
   const [selectedCat, setSelectedCat] = useState("all");
   const [selectedProjects, setSelectedProjects] = useState(allProjects);
   const [map, setMap] = useState();
   const [bounds, setBounds] = useState(null);
+  const communitiesSec = useRef();
+  const [galleryArr, getGA] = useState();
+  const [loadingGallery, setLoadingGallery] = useState();
+
+  const handleClose = () => setGshow(false);
+  const handleShow = () => setGshow(true);
 
   useEffect(() => {
-    
+    setSecLocation((acc) => getSectionTopBOttom(acc, communitiesSec.current));
+  }, [communitiesSec.current?.offsetTop]);
+
+  useEffect(() => {
     if (bounds) {
       setBounds(new google.maps.LatLngBounds());
     }
@@ -34,7 +45,7 @@ const Projects = () => {
   }, [selectedCat]);
 
   return (
-    <section>
+    <section id="communities" ref={communitiesSec}>
       <Wrapper apiKey={import.meta.env.VITE_APP_MAP_KEY} render={render}>
         <GoogleMap
           selectedProjects={selectedProjects}
@@ -54,8 +65,13 @@ const Projects = () => {
           setSelectedCat,
           setBounds,
           setSelectedProjects,
+          handleShow,
+          getGA,
+          setLoadingGallery,
         }}
       ></ProjectContainer>
+
+      <GalleryModal {...{ galleryArr, gshow, handleClose, loadingGallery }} />
     </section>
   );
 };
